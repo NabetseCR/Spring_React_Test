@@ -1,0 +1,47 @@
+IDE we are going to use Eclipse
+
+Maven: Software project management tool
+This help us to unifies the development process
+
+Project Object Model (POM) contains basic information about
+the project.
+
+Contains all the dependencies that Maven should download
+
+-------------------------
+
+Creating the project
+
+We are going to use Spring Initializr
+
+go to start.spring.io
+
+Maven Project
+Java
+Spring Boot 2.6.7
+Packaging Jar
+Java 11
+
+Dependencies
+
+Spring Web 
+Spring Boot DevTools [is like liveserver]
+
+Generate
+
+Extract the zip file
+Open Eclipse
+File Import -> Existing Maven Projects
+Select the folder we got since we unzip the file
+
+
+--------------------------------
+
+Project Structure
+
+Main File
+
+---------------------------------
+
+
+Setting Up our database [MariaDB] MariaDBServer 3307

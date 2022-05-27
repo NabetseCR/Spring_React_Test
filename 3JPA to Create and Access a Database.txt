@@ -1,0 +1,93 @@
+Java Persistent API
+
+Object Relational Mapping
+
+Technique that allows to fetch from and manipulate a database
+using an objected-oriented programming parading.
+
+It relies on object-oriented concepts. 
+
+Is independent of databases.
+
+JPA Provides object-relational mapping for Java Developers.
+Is a Java class that presents the structure of a database.
+
+Hibernate THe most popular Java-base JPA inplementation and
+is used in Spring Boot by default.
+
+--------------------------
+
+Creating an Entity class
+
+Entity class is a simple Java class that is annotated with
+JPA's @Entity annotation, use the standard JavaBean naming
+convention. class fields have private visibility.
+
+In the meantime we are going to use H2 database, which is
+embedded in the in-memory database.
+
+1. Add the dependecies to the pom.xml file
+
+2. Create a package within the root package [.domain] name
+3. Within the new package create a class [Car] this class
+uses the @Entity annotation Ctrl + Shift + O
+Import packages automatically
+4. The attribute that represents the primary key uses the
+@Id annotation
+
+--------------------------------
+
+Creating CRUD Repositories
+
+logging.level.root=DEBUG
+server.port=8081
+
+CrudRepository interface for Create, Read, Update and Delete
+
+1.Within the .domain package we create our repository class
+
+2.ThIis interface created extends from CrudRepository
+with 2 arguments <Entity, type of ID>
+
+3.We can define our own queries within the repository class
+the only thing, the method should start with [findBy] the
+parameter of this method is the attribute we want to use to
+filter
+
+-----------------------------------
+
+Relationships between tables
+
+1. Once created the second entity
+In this case we I'm going to mention the one to many relationship
+
+2.In the class we're the foreign key is set we use the
+@ManyToOne annotation
+fetchtype.Lazy means when the main class is called, all asso
+ciated instances are going to be fetched when needed
+
+@OneToMany(cascade=CascadeType.ALL, mappedBy="owner")
+annotation explanation
+
+one owner can have many cars, 
+cascade determines when an action is executed to a entity
+in this case is going to affect the "children" in every action
+"update, delete..."
+
+mappedBy states the attribute used in the child class
+as a foreign key
+
+-------------------------------------
+
+
+Setting up a database [Heidi]
+
+root root 3307
+
+1.Create the database using the GUI or CLI
+2.Then add the dependency for you database in the pom.xml file
+3.In application.propperties set up the connection
+
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.jpa.show-sql=true
+h2 deleted lines

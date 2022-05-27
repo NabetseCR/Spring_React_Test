@@ -1,0 +1,57 @@
+REST
+
+Representational State Transfer
+
+Architectural stype for creating web services.
+
+Constraints:
+
+1. Stateless: The server doesn't hold any informaiton 
+about the client state
+
+2. Cacheable: Cache response to improve performance
+
+3. Uniform Interface: Requests from different clients
+looks the same.
+
+4. Layered System: Allow us to uise a layered system 
+architecture.
+
+5. Code on deman: Optional constraint.
+
+------------------------------
+
+Code hands on
+
+Creating a RESTful web service
+
+In spring boot all the HTTP requests are handle by
+controller classes.
+
+
+1. Create in the root package a web package
+2. Create the [Entity]Controller class within the new package
+3. Controllers use the @RestController annotation
+
+*Annotations used for different scenarios
+
+@RequestMapping: Define the endpoint with the method is mapping
+to.
+@RepositoryRestRosource(path="xxxx"): Change the default path
+of the repository
+@Param("xxxx") and @RepositoryRestResource within the
+repository to add our own queries
+path/repository/search/findByColor?color=red
+
+---------------------------------
+
+Creating a Restful service with a more powerful way
+using Spring Data REST
+
+1. add the dependency
+
+by default spring data rest finds all public repositories
+and creates a Restful web serices for the entities automatically
+
+2. Define the endpoint of service in the application.propperties
+

@@ -1,0 +1,24 @@
+DI software development technique where we can create objects
+that depend on other objects.
+
+Client class <- Injector Class <- Service class
+
+Using DI in Spring Boot
+
+Spring Boot scans the application classes and registers classes
+with certain annotations (
+
+@Service
+@Repository
+@Controller
+)
+
+as Spring Beans, this beans can be injected using an
+@Autowired notation
+
+example
+
+public class Car {
+  @Autowired
+  private CarRepository carRepository;
+}
